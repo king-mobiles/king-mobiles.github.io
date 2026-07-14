@@ -78,6 +78,24 @@ async function fetchAddress() {
     if (docSnap.exists()) {
       const data = docSnap.data();
 
+      // Update logo dynamically
+      const navLogo = document.getElementById("nav-logo");
+      const fallbackName = document.getElementById("nav-fallback-name");
+      const fallbackTag = document.getElementById("nav-fallback-tag");
+      if (navLogo) {
+        const logoUrl = typeof data.logo_url !== "undefined" ? data.logo_url : "assets/images/king-mobiles-header-logo_1.png";
+        if (logoUrl && logoUrl.trim() !== "") {
+          navLogo.src = logoUrl.trim();
+          navLogo.style.display = "block";
+          if (fallbackName) fallbackName.style.display = "none";
+          if (fallbackTag) fallbackTag.style.display = "none";
+        } else {
+          navLogo.style.display = "none";
+          if (fallbackName) fallbackName.style.display = "block";
+          if (fallbackTag) fallbackTag.style.display = "block";
+        }
+      }
+
       // Update contact details (phone, whatsapp, email)
       if (data.phone) {
         const cleanPhone = data.phone.replace(/[^\d+]/g, "");

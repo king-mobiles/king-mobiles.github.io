@@ -383,6 +383,7 @@ function getFallbackData(tabName) {
   switch (tabName) {
     case "shop-info":
       return {
+        logo_url: "assets/images/king-mobiles-header-logo_1.png",
         phone: "+91 73394 80350",
         whatsapp: "+91 73394 80350",
         mail: "kingmobiles@gmail.com",
@@ -719,6 +720,20 @@ function renderEditPanel(tabName, data, container) {
         <h3 style="color: var(--white); margin: 0 0 15px 0; font-size: 1.1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 8px;">
           Hero Section Customization ${!isAdmin ? '<span style="color: var(--red); font-size: 0.8rem; margin-left: 10px;">(Read-Only: Admin Access Required)</span>' : ""}
         </h3>
+        <div class="form-group" style="margin-bottom: 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <label class="form-label" style="margin-bottom: 0;">Header Logo Image (Optional - Recommended size: 250px x 67px, transparent PNG. Leave empty for text only)</label>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+              <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
+              <label class="switch">
+                <input type="checkbox" id="hero-logo-is-drive" ${isDriveThumbnailUrl(data.logo_url) ? "checked" : ""} onchange="document.getElementById('hero-logo-url').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <input type="text" class="form-input" id="hero-logo-url" value="${isDriveThumbnailUrl(data.logo_url) ? extractDriveId(data.logo_url) : (data.logo_url || "")}" placeholder="${isDriveThumbnailUrl(data.logo_url) ? "Enter Google Drive URL or File ID" : "assets/images/... or external URL"}" ${!isAdmin ? "disabled" : ""}>
+        </div>
         <div class="form-group">
           <label class="form-label">Hero Slogan / Subtitle Text</label>
           <textarea class="form-input" id="hero-slogan" required ${!isAdmin ? "disabled" : ""}>${data.hero_slogan || ""}</textarea>
@@ -1039,6 +1054,16 @@ window.saveHeroFooter = async function (e) {
   saveBtn.disabled = true;
   saveBtn.innerHTML = `<span class="spinner"></span> Saving...`;
 
+  // Parse Hero Logo URL
+  let logoUrl = document.getElementById("hero-logo-url").value.trim();
+  const isLogoDrive = document.getElementById("hero-logo-is-drive")?.checked;
+  if (isLogoDrive && logoUrl) {
+    const driveId = extractDriveId(logoUrl);
+    if (driveId) {
+      logoUrl = `https://drive.google.com/thumbnail?id=${driveId}&sz=w1000`;
+    }
+  }
+
   // Parse Hero Stats
   const statRows = document.querySelectorAll(".hero-stat-row");
   const heroStats = Array.from(statRows).map((row) => {
@@ -1065,6 +1090,7 @@ window.saveHeroFooter = async function (e) {
 
   const updatedData = {
     ...currentData,
+    logo_url: logoUrl,
     hero_slogan: document.getElementById("hero-slogan").value.trim(),
     hero_tags: heroTags,
     hero_stats: heroStats,
