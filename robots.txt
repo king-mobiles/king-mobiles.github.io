@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://king-mobiles.github.io/sitemap.xml

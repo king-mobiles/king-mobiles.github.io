@@ -16,8 +16,27 @@
   <meta property="og:description" content="Original Mobiles. Trusted Service. Best Deals Every Day." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="assets/images/King-mobiles-fav-icon.png" />
+  
+  <!-- Preconnect/DNS-Prefetch for CDNs & External Resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://firestore.googleapis.com" crossorigin />
+  
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://www.gstatic.com" />
+
+  <!-- Module Preloading for Firestore & Main Scripts -->
+  <link rel="modulepreload" href="assets/js/firebase.js" />
+  <link rel="modulepreload" href="assets/js/main.js" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -78,7 +97,7 @@
   <header>
     <nav id="navbar">
       <a href="#hero" class="nav-brand">
-        <img src="assets/images/king-mobiles-header-logo.png" alt="King Mobiles" style="height: 67px; width: auto;"
+        <img src="assets/images/king-mobiles-header-logo_1.png" alt="King Mobiles" style="height: 67px; width: auto;"
           onerror="this.style.display='none'; document.getElementById('nav-fallback-name').style.display='block'; document.getElementById('nav-fallback-tag').style.display='block';" />
         <div class="nav-brand-name" id="nav-fallback-name" style="display:none;">KING <span>MOBILES</span></div>
         <div class="nav-tagline" id="nav-fallback-tag" style="display:none;">
@@ -286,7 +305,7 @@
         <div class="services-info" data-aos="fade-left" data-aos-delay="100">
           <div id="service-detail-content" class="services-info-content">
             <div class="services-info-img-wrap">
-              <img id="service-img" src="assets/images/service_default.png" alt="Service Image"
+              <img id="service-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Service Image"
                 class="services-info-img" style="display: none;" />
               <div class="services-placeholder-img" id="service-img-placeholder">
                 <span class="placeholder-icon" id="service-placeholder-icon">🛠️</span>
@@ -558,20 +577,20 @@
             We'll get back to you as soon as possible.
           </p>
           <div class="form-group">
-            <label class="form-label">Name *</label>
-            <input type="text" class="form-input" name="name" placeholder="Enter your name" required />
+            <label class="form-label" for="contact-name">Name *</label>
+            <input type="text" id="contact-name" class="form-input" name="name" placeholder="Enter your name" required />
           </div>
           <div class="form-group">
-            <label class="form-label">Phone Number *</label>
-            <input type="tel" class="form-input" name="phone" placeholder="+91 XXXXX XXXXX" required />
+            <label class="form-label" for="contact-phone">Phone Number *</label>
+            <input type="tel" id="contact-phone" class="form-input" name="phone" placeholder="+91 XXXXX XXXXX" required />
           </div>
           <div class="form-group">
-            <label class="form-label">Email (Optional)</label>
-            <input type="email" class="form-input" name="email" placeholder="Enter your email" />
+            <label class="form-label" for="contact-email">Email (Optional)</label>
+            <input type="email" id="contact-email" class="form-input" name="email" placeholder="Enter your email" />
           </div>
           <div class="form-group">
-            <label class="form-label">Interested In</label>
-            <select class="form-input" name="service" style="background-color: var(--dark3); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.08); font-family: inherit;">
+            <label class="form-label" for="contact-interest">Interested In</label>
+            <select id="contact-interest" class="form-input" name="service" style="background-color: var(--dark3); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.08); font-family: inherit;">
               <option value="Buy a Mobile">Buy a Mobile</option>
               <option value="Mobile Repair">Mobile Repair</option>
               <option value="Screen Replacement">Screen Replacement</option>
@@ -582,8 +601,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-input" name="message" placeholder="How can we help you?"></textarea>
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea id="contact-message" class="form-input" name="message" placeholder="How can we help you?"></textarea>
           </div>
           <button type="submit" class="form-submit">
             Send Message →
@@ -738,16 +757,15 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- FIREBASE INTEGRATION -->
   <script type="module" src="assets/js/firebase.js"></script>
 
   <script type="module" src="assets/js/main.js"></script>
-  <script src="assets/js/animations.js"></script>
+  <script defer src="assets/js/animations.js"></script>
 
 
 </body>

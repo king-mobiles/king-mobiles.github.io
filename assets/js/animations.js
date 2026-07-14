@@ -1,7 +1,7 @@
 /* ─────────────────────────────
  LOADER & INIT
-───────────────────────────── */
-window.addEventListener("load", function () {
+ ───────────────────────────── */
+document.addEventListener("DOMContentLoaded", function () {
   const tl = gsap.timeline({
     onComplete: function () {
       gsap.to("#loader", {
@@ -9,7 +9,8 @@ window.addEventListener("load", function () {
         duration: 0.2,
         ease: "power2.inOut",
         onComplete: function () {
-          document.getElementById("loader").style.display = "none";
+          const loader = document.getElementById("loader");
+          if (loader) loader.style.display = "none";
           document.body.style.overflow = "";
           initHero();
         },
@@ -19,25 +20,25 @@ window.addEventListener("load", function () {
   document.body.style.overflow = "hidden";
   tl.to(
     "#loader-king",
-    { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-    0.3,
+    { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" },
+    0.1,
   )
     .to(
       "#loader-line",
-      { width: "100%", duration: 0.6, ease: "power2.inOut" },
-      0.8,
+      { width: "100%", duration: 0.3, ease: "power2.inOut" },
+      0.3,
     )
     .to(
       "#loader-mobiles",
-      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-      1.0,
+      { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" },
+      0.4,
     )
     .to(
       "#loader-tagline",
-      { opacity: 1, duration: 0.5, ease: "power2.out" },
-      1.4,
+      { opacity: 1, duration: 0.2, ease: "power2.out" },
+      0.6,
     )
-    .to({}, { duration: 0.8 }, 1.8);
+    .to({}, { duration: 0.2 }, 0.8);
 });
 
 /* ─────────────────────────────
@@ -401,71 +402,60 @@ if (statsSection) {
 }
 
 /* ─────────────────────────────
- THREE.JS HERO PARTICLE FIELD
-───────────────────────────── */
+ HERO PARTICLE FIELD (LIGHTWEIGHT 2D CANVAS)
+ ───────────────────────────── */
 function initThree() {
   if (window.matchMedia("(max-width: 768px)").matches) return;
   var canvas = document.getElementById("hero-canvas");
   if (!canvas) return;
-  var renderer, scene, camera, particles, animId;
+  var ctx = canvas.getContext("2d");
+  if (!ctx) return;
 
-  try {
-    renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-      alpha: true,
-      antialias: true,
+  var particles = [];
+  var count = 100;
+  var animId;
+
+  var width = (canvas.width = window.innerWidth);
+  var height = (canvas.height = window.innerHeight);
+
+  for (var i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 1.5 + 0.5,
+      speed: Math.random() * 0.4 + 0.1,
+      opacity: Math.random() * 0.4 + 0.1,
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(
-      60,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000,
-    );
-    camera.position.z = 50;
-
-    var count = 300;
-    var geometry = new THREE.BufferGeometry();
-    var positions = new Float32Array(count * 3);
-    for (var i = 0; i < count * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 200;
-    }
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-    var material = new THREE.PointsMaterial({
-      color: 0xd4a017,
-      size: 0.8,
-      transparent: true,
-      opacity: 0.4,
-      sizeAttenuation: true,
-    });
-    particles = new THREE.Points(geometry, material);
-    scene.add(particles);
-
-    function animate() {
-      animId = requestAnimationFrame(animate);
-      var pos = geometry.attributes.position.array;
-      for (var i = 1; i < pos.length; i += 3) {
-        pos[i] += 0.01;
-        if (pos[i] > 100) pos[i] = -100;
-      }
-      geometry.attributes.position.needsUpdate = true;
-      particles.rotation.y += 0.0005;
-      renderer.render(scene, camera);
-    }
-    animate();
-
-    window.addEventListener("resize", function () {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  } catch (e) {
-    if (canvas) canvas.style.display = "none";
   }
+
+  function draw() {
+    animId = requestAnimationFrame(draw);
+    ctx.clearRect(0, 0, width, height);
+
+    for (var i = 0; i < count; i++) {
+      var p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(212, 160, 23, " + p.opacity + ")";
+      ctx.fill();
+
+      // Move particle upwards
+      p.y -= p.speed;
+
+      // Reset when particle goes off screen
+      if (p.y < -10) {
+        p.y = height + 10;
+        p.x = Math.random() * width;
+      }
+    }
+  }
+
+  draw();
+
+  window.addEventListener("resize", function () {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
 }
 
 /* ─────────────────────────────
