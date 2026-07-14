@@ -1,0 +1,44 @@
+{
+  "slogan": "Grab these deals before they expire. Walk in or WhatsApp us to avail.",
+  "cards": [
+    {
+      "id": "cd1",
+      "fire": false,
+      "badge": "Limited Time",
+      "badgeClass": "hot",
+      "title": "Accessories Sale",
+      "desc": "Get up to 20% off on all mobile accessories — cases, chargers, earbuds & cables.",
+      "expiresAt": "2026-06-26T18:00:00+05:30",
+      "showEndDate": false,
+      "enabled": true,
+      "waText": "Hello King Mobiles, I want to know about the accessories offer",
+      "waBtnText": "Avail Offer"
+    },
+    {
+      "id": "cd2",
+      "fire": true,
+      "badge": "Special Deal",
+      "badgeClass": "",
+      "title": "Screen Replacement",
+      "desc": "Free tempered glass with every screen replacement. Valid on all major brands.",
+      "expiresAt": "2026-06-28T23:59:59+05:30",
+      "showEndDate": true,
+      "enabled": true,
+      "waText": "Hello King Mobiles, I want to know about the screen replacement offer",
+      "waBtnText": "Book Now"
+    },
+    {
+      "id": "cd3",
+      "fire": false,
+      "badge": "Weekend Only",
+      "badgeClass": "",
+      "title": "boAt Earbuds Deal",
+      "desc": "Special weekend pricing on boAt earbuds & TWS earphones. Limited stock available.",
+      "expiresAt": "2026-06-25T20:00:00+05:30",
+      "showEndDate": false,
+      "enabled": true,
+      "waText": "Hello King Mobiles, I want to know about the boAt offer",
+      "waBtnText": "WhatsApp Us"
+    }
+  ]
+}

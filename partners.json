@@ -1,0 +1,49 @@
+{
+  "slogan": "Authorised dealer for India's leading brands — genuine products, official warranty.",
+  "sliding_images": [
+    "assets/images/zebronics-horizontal-logo.png",
+    "assets/images/itel-horizontal-logo.png",
+    "assets/images/oraimo-horizontal-logo.png",
+    "assets/images/portronics-horizontal-logo.png",
+    "assets/images/lava-international-horizontal-logo.png",
+    "assets/images/hmd-horizontal-logo.png",
+    "assets/images/boat-horizontal-logo.png"
+  ],
+  "cards": [
+    {
+      "name": "boAt",
+      "logo": "assets/images/boat-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "itel",
+      "logo": "assets/images/itel-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "Zebronics",
+      "logo": "assets/images/zebronics-white-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "Oraimo",
+      "logo": "assets/images/oraimo-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "Portronics",
+      "logo": "assets/images/portronics-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "Lava",
+      "logo": "assets/images/lava-international-logo-transparent.png",
+      "badge": "Official Partner"
+    },
+    {
+      "name": "HMD Global",
+      "logo": "assets/images/hmd-logo-transparent.png",
+      "badge": "Official Partner"
+    }
+  ]
+}

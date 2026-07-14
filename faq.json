@@ -1,0 +1,37 @@
+{
+  "slogan": "Everything you need to know before visiting us.",
+  "items": [
+    {
+      "question": "Do you sell original and genuine mobile phones?",
+      "answer": "Yes, absolutely. All products at King Mobiles are 100% original and sourced directly from authorised distributors. We do not sell refurbished or duplicate products of any kind."
+    },
+    {
+      "question": "Do you provide screen replacement services?",
+      "answer": "Yes, we provide professional screen replacement for all major brands including Samsung, Redmi, Realme, Oppo, Vivo & more. We also offer free tempered glass installation with every screen replacement."
+    },
+    {
+      "question": "Do you sell original accessories?",
+      "answer": "Yes, we stock original accessories from brands like boAt, Zebronics, Oraimo, Portronics & more. All accessories come with manufacturer warranty and original packaging."
+    },
+    {
+      "question": "Do you support Airtel, Jio and Vi SIM services?",
+      "answer": "Yes, we provide new SIM card activations and operator changes for Airtel, Jio, and Vi (Vodafone Idea). Bring your Aadhaar card for same-day SIM activation."
+    },
+    {
+      "question": "Do you provide Sundirect DTH recharge?",
+      "answer": "Yes, we offer Sundirect DTH recharge services. You can walk in or WhatsApp us your customer ID and preferred plan for quick recharge."
+    },
+    {
+      "question": "Do you provide mobile unlocking services?",
+      "answer": "Yes, we provide mobile unlocking services for network-locked and pattern/PIN-locked phones. Please WhatsApp us with your phone model for a quick quote."
+    },
+    {
+      "question": "Do you offer any warranty on repairs?",
+      "answer": "Yes, we provide a service warranty on all repairs. The duration varies based on the type of repair. Please ask our technician at the time of service for specific warranty details."
+    },
+    {
+      "question": "What are your business hours?",
+      "answer": "We are open every day from 9:00 AM to 9:30 PM. You can also reach us on WhatsApp at any time for queries, and we'll respond during business hours."
+    }
+  ]
+}

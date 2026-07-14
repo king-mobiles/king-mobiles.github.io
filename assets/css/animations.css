@@ -1,0 +1,523 @@
+/* ── KEYFRAMES ── */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatA {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.05);
+  }
+}
+
+@keyframes floatB {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(1.04);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ── ANIMATIONS, TRANSITIONS & HOVERS ── */
+
+/* Loader */
+#loader-king {
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#loader-mobiles {
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#loader-line {
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#loader-tagline {
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Banner ticker and controls */
+.ticker-inner {
+  animation: ticker 28s linear infinite;
+}
+
+#banner-close {
+  transition: var(--transition);
+}
+
+#banner-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation */
+nav {
+  transition: background var(--transition), top 0.3s ease-in-out;
+}
+
+.nav-links a {
+  transition: color var(--transition);
+}
+
+.nav-links a::after {
+  transition: width var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn-call {
+  transition: var(--transition);
+}
+
+.btn-call:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-wa {
+  transition: var(--transition);
+}
+
+.btn-wa:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.nav-hamburger span {
+  transition: var(--transition);
+}
+
+.nav-mobile {
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.nav-mobile a {
+  transition: color var(--transition);
+}
+
+.nav-mobile a:hover {
+  color: var(--gold);
+}
+
+/* Hero Shapes & Blurs */
+.hero-shape-1 {
+  animation: floatA 12s ease-in-out infinite;
+}
+
+.hero-shape-2 {
+  animation: floatB 10s ease-in-out infinite;
+}
+
+.hero-blur-1 {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.hero-blur-2 {
+  animation: float-slow 12s ease-in-out infinite reverse;
+}
+
+.hero-blur-3 {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.btn-primary {
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
+}
+
+.btn-outline {
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Why Choose Us Cards */
+.why-card {
+  opacity: 0;
+  transform: translateY(72px) scale(0.96);
+  will-change: transform, opacity;
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-card.why-card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.why-card::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.why-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Brand Section Carousel & Cards */
+.brands-carousel-wrap {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brands-carousel-wrap.brand-section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand-slide img {
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.brand-slide img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.08);
+}
+
+.brand-card {
+  opacity: 0;
+  transform: translateY(64px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), border-color var(--transition), background var(--transition);
+}
+
+.brand-card.brand-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand-card:hover {
+  border-color: rgba(212, 160, 23, 0.4);
+  transform: translateY(-4px);
+  background: var(--dark4);
+}
+
+.brand-logo-placeholder {
+  transition: var(--transition);
+}
+
+.brand-logo-placeholder img {
+  transition: var(--transition);
+}
+
+.brand-card:hover .brand-logo-placeholder {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: rgba(212, 160, 23, 0.3);
+}
+
+.brand-card:hover .brand-logo-placeholder img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Product Cards */
+.product-card {
+  opacity: 0;
+  transform: translateY(64px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), border-color var(--transition), background var(--transition);
+}
+
+.product-card.product-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card::after {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background: var(--dark4);
+  border-color: rgba(212, 160, 23, 0.2);
+}
+
+.product-card:hover::after {
+  transform: scaleX(1);
+}
+
+.product-img-wrap img {
+  transition: filter var(--transition), opacity var(--transition);
+}
+
+.product-card:hover .product-img-wrap img {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(64%) sepia(52%) saturate(700%) hue-rotate(5deg) brightness(95%) contrast(95%);
+}
+
+/* Services */
+.service-item {
+  transition: var(--transition);
+}
+
+.service-item:hover,
+.service-item.active {
+  border-color: var(--gold-dark);
+  transform: translateX(6px);
+  background: rgba(212, 160, 23, 0.06);
+  box-shadow: 0 4px 15px rgba(212, 160, 23, 0.08);
+}
+
+.service-dot {
+  transition: var(--transition);
+}
+
+.service-item.active .service-dot {
+  background: var(--gold-dark);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.services-info-content {
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.services-info-content.changing {
+  opacity: 0;
+  transform: translateX(-60px) scale(0.98);
+}
+
+.services-info-img {
+  transition: transform 0.5s ease;
+}
+
+.services-info-img-wrap:hover .services-info-img {
+  transform: scale(1.04);
+}
+
+.services-placeholder-img .placeholder-icon {
+  transition: transform 0.3s ease;
+}
+
+.services-placeholder-img:hover .placeholder-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Special Offers Card */
+.offer-card {
+  transition: var(--transition);
+}
+
+.offer-card:hover {
+  border-color: rgba(212, 160, 23, 0.4);
+  transform: translateY(-4px);
+}
+
+.offer-badge.hot {
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+.offer-wa {
+  transition: var(--transition);
+}
+
+.offer-wa:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+/* Accessories Cards */
+.acc-card {
+  opacity: 0;
+  transform: translateY(64px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), border-color var(--transition), background var(--transition);
+}
+
+.acc-card.acc-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.acc-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 160, 23, 0.2);
+}
+
+.acc-img img {
+  transition: var(--transition);
+}
+
+.acc-card:hover .acc-img img {
+  transform: scale(1.05);
+}
+
+.acc-btn {
+  transition: var(--transition);
+}
+
+.acc-btn:hover {
+  background: rgba(212, 160, 23, 0.1);
+}
+
+/* Gallery Masonry items */
+.m-img {
+  transition: transform 0.5s ease;
+}
+
+.m-overlay {
+  transition: opacity 0.35s ease;
+}
+
+.m-item:hover .m-overlay {
+  opacity: 1;
+}
+
+.m-item:hover .m-img {
+  transform: scale(1.04);
+}
+
+/* Accordion FAQs */
+.faq-q {
+  transition: background var(--transition);
+}
+
+.faq-q:hover {
+  background: var(--dark4);
+}
+
+.faq-icon {
+  transition: transform var(--transition);
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  transition: max-height 0.35s ease;
+}
+
+/* Contact Section controls */
+.contact-btn {
+  transition: var(--transition);
+}
+
+.contact-btn.primary:hover {
+  background: var(--gold-light);
+}
+
+.contact-btn.outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.contact-btn.green:hover {
+  background: #1db954;
+}
+
+.form-input {
+  transition: border-color var(--transition);
+}
+
+.form-submit {
+  transition: var(--transition);
+}
+
+.form-submit:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Social Buttons */
+.social-btn {
+  transition: var(--transition);
+}
+
+.social-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.footer-links a {
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+/* Floating WhatsApp Button */
+.wa-tooltip {
+  transition: var(--transition);
+}
+
+#wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wa-btn {
+  transition: var(--transition);
+}
+
+.wa-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+}
+
+.wa-ring {
+  animation: wa-pulse 2.5s ease-out infinite;
+}
+
+.wa-ring-2 {
+  animation-delay: 1.25s;
+}

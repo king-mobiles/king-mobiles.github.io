@@ -1,0 +1,83 @@
+{
+  "default": {
+    "title": "Fast, Reliable & Honest Repair Service",
+    "description": "Our experienced technicians handle all brands and models. We diagnose accurately, quote transparently, and repair quickly — usually same day for most issues.",
+    "image": "assets/images/service_default.png",
+    "waMessage": "Hello King Mobiles, I need a mobile repair service...",
+    "showBadges": false
+  },
+  "services": [
+    {
+      "id": "repair",
+      "name": "Mobile Repair",
+      "title": "Mobile Repair",
+      "description": "Professional repair services for all hardware issues including charging port fixes, battery replacements, microphone repairs, speaker changes, and motherboard issues. We use premium replacement parts and offer warranty.",
+      "image": "assets/images/service_repair.png",
+      "waMessage": "Hello King Mobiles, I need a mobile repair service...",
+      "showBadges": false
+    },
+    {
+      "id": "screen",
+      "name": "Screen Replacement",
+      "title": "Screen Replacement",
+      "description": "High-quality screen replacements for all smartphone brands. We resolve issues like cracked glass, unresponsive touch screens, black screens, or display bleeding. Includes a free tempered glass!",
+      "image": "assets/images/service_screen.png",
+      "waMessage": "Hello King Mobiles, I need a screen replacement service...",
+      "showBadges": false
+    },
+    {
+      "id": "glass",
+      "name": "Tempered Glass Replacement",
+      "title": "Tempered Glass Replacement",
+      "description": "Premium 9H hardness tempered glass installation to protect your display from drops and scratches. We ensure bubble-free application with precise fit for all models.",
+      "image": "assets/images/service_glass.png",
+      "waMessage": "Hello King Mobiles, I need a tempered glass replacement...",
+      "showBadges": false
+    },
+    {
+      "id": "software",
+      "name": "Software Flashing & Change",
+      "title": "Software Flashing & Change",
+      "description": "Fix bootloops, system lag, and software errors with official firmware flashing. We also assist with OS updates, data backup, and resolving software glitches.",
+      "image": "assets/images/service_software.png",
+      "waMessage": "Hello King Mobiles, I need a software flashing service...",
+      "showBadges": false
+    },
+    {
+      "id": "unlocking",
+      "name": "Mobile Unlocking",
+      "title": "Mobile Unlocking",
+      "description": "Safe and secure mobile unlocking for pattern, PIN, password, or network/carrier locks. Get access to your phone or use it with any carrier worldwide.",
+      "image": "assets/images/service_unlocking.png",
+      "waMessage": "Hello King Mobiles, I need a mobile unlocking service...",
+      "showBadges": false
+    },
+    {
+      "id": "sim",
+      "name": "New SIM Card Activation",
+      "title": "New SIM Card Activation",
+      "description": "Get a new prepaid or postpaid SIM card activated instantly. We support Airtel, Jio, and Vi with quick Aadhaar-based digital KYC process.",
+      "image": "assets/images/service_sim.png",
+      "waMessage": "Hello King Mobiles, I want to activate a new SIM card...",
+      "showBadges": true
+    },
+    {
+      "id": "porting",
+      "name": "SIM Operator Change",
+      "title": "SIM Operator Change",
+      "description": "Switch your current mobile operator to Airtel, Jio, or Vi without changing your mobile number. Benefit from exciting port-in offers and high-speed data plans.",
+      "image": "assets/images/service_porting.png",
+      "waMessage": "Hello King Mobiles, I want to port my SIM to another operator...",
+      "showBadges": true
+    },
+    {
+      "id": "dth",
+      "name": "Sundirect DTH Recharge",
+      "title": "Sundirect DTH Recharge",
+      "description": "Quick and hassle-free Sundirect DTH recharging services. Renew your monthly packs, add channels, or upgrade packages instantly in-store or via WhatsApp.",
+      "image": "assets/images/service_dth.png",
+      "waMessage": "Hello King Mobiles, I want to recharge my Sundirect DTH...",
+      "showBadges": false
+    }
+  ]
+}

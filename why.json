@@ -1,0 +1,35 @@
+{
+  "slogan": "We don't just sell phones — we build trust with every customer, every day.",
+  "cards": [
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\" /></svg>",
+      "title": "Genuine Products Only",
+      "desc": "Every product we sell is 100% original, directly from authorised distributors. No duplicates, no compromises."
+    },
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\" /></svg>",
+      "title": "Official Brand Partners",
+      "desc": "Authorised dealer for 7+ premium brands including boAt, itel, Lava, Oraimo, Zebronics, Portronics & HMD Global."
+    },
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z\" /></svg>",
+      "title": "Expert Mobile Service",
+      "desc": "Trained technicians for all repairs — software, hardware, screen replacement & more with quick turnaround."
+    },
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\" ry=\"2\" /><line x1=\"12\" y1=\"18\" x2=\"12.01\" y2=\"18\" /></svg>",
+      "title": "Screen Replacement",
+      "desc": "Professional screen and tempered glass replacement for all major brands at honest, transparent prices."
+    },
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z\" /><line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\" /><path d=\"M16 10a4 4 0 01-8 0\" /></svg>",
+      "title": "Accessories Collection",
+      "desc": "Cases, chargers, earbuds, smartwatches, cables, power banks — everything you need, all under one roof."
+    },
+    {
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" /><line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" /></svg>",
+      "title": "SIM & Recharge Services",
+      "desc": "New SIM activations for Airtel, Jio & Vi. Sundirect DTH recharge. All operator services at one place."
+    }
+  ]
+}
