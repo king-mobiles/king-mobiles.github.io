@@ -1257,8 +1257,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
 
+      // Sanitize phone number (only keep last 10 digits)
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const rawPhone = phoneInput ? phoneInput.value : "";
+      const digitsOnly = rawPhone.replace(/\D/g, "");
+      const last10Digits = digitsOnly.slice(-10);
+
+      if (last10Digits.length !== 10) {
+        alert("Please enter a valid 10-digit phone number.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        return;
+      }
+
       // Form data
       const formData = new FormData(form);
+      formData.set("phone", last10Digits);
       const data = new URLSearchParams(formData);
 
       try {

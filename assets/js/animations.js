@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { opacity: 1, duration: 0.2, ease: "power2.out" },
       0.6,
     )
-    .to({}, { duration: 0.2 }, 0.8);
+    .to({}, { duration: 0.2 }, 1.2);
 });
 
 /* ─────────────────────────────
