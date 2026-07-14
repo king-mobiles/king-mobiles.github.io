@@ -13,6 +13,7 @@
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="assets/css/admin.css" />
   </head>
+
   <body>
     <!-- ==========================================================================
        1. AUTHENTICATION SECTION (LOGIN PAGE)
@@ -623,6 +624,172 @@
         </div>
         <div class="modal-body" id="modal-body">
           <!-- Dynamically injected edit forms based on content card type -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       3.5 MODAL OVERLAY FOR GOOGLE DRIVE IMAGE INSTRUCTIONS
+       ========================================================================== -->
+    <div
+      id="drive-instruction-modal"
+      class="modal-overlay"
+      style="z-index: 1100"
+    >
+      <div class="modal-container" style="max-width: 600px">
+        <div class="modal-header">
+          <h3 class="modal-title">How to Get Google Drive Image Link</h3>
+          <button class="modal-close" onclick="closeDriveInfoModal()">✕</button>
+        </div>
+        <div
+          class="modal-body"
+          style="
+            padding: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--white);
+          "
+        >
+          <div
+            style="
+              margin-bottom: 15px;
+              background: rgba(212, 160, 23, 0.05);
+              border: 1px solid rgba(212, 160, 23, 0.15);
+              border-radius: var(--radius-sm);
+              padding: 12px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+            "
+          >
+            <span
+              style="
+                color: var(--gold);
+                font-weight: bold;
+                font-size: 1.1rem;
+                line-height: 1;
+              "
+              >ℹ️</span
+            >
+            <div>
+              <strong style="color: var(--gold)">Crucial Requirement:</strong>
+              The file sharing permissions must be set to
+              <strong>"Anyone with the link"</strong>, or the image will not
+              load on the public website.
+            </div>
+          </div>
+
+          <div
+            class="instruction-steps"
+            style="display: flex; flex-direction: column; gap: 15px"
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: var(--gold);
+                  color: var(--black);
+                  border-radius: 50%;
+                  width: 22px;
+                  height: 22px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: bold;
+                  flex-shrink: 0;
+                "
+                >1</span
+              >
+              <div>
+                <strong>Upload & Right-Click</strong>
+                <p style="color: var(--gray-light); margin-top: 2px">
+                  Upload the image to your Google Drive, right-click the file,
+                  and select <strong>Share</strong> &rarr;
+                  <strong>Share</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: var(--gold);
+                  color: var(--black);
+                  border-radius: 50%;
+                  width: 22px;
+                  height: 22px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: bold;
+                  flex-shrink: 0;
+                "
+                >2</span
+              >
+              <div>
+                <strong>Change General Access</strong>
+                <p style="color: var(--gray-light); margin-top: 2px">
+                  Under <em>General Access</em>, change the setting from
+                  <strong>Restricted</strong> to
+                  <strong>Anyone with the link</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: var(--gold);
+                  color: var(--black);
+                  border-radius: 50%;
+                  width: 22px;
+                  height: 22px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: bold;
+                  flex-shrink: 0;
+                "
+                >3</span
+              >
+              <div>
+                <strong>Copy Link & Paste</strong>
+                <p style="color: var(--gray-light); margin-top: 2px">
+                  Click the <strong>Copy link</strong> button. In the Admin
+                  Panel, toggle on <strong>Drive Image</strong> and paste the
+                  copied link.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: 20px;
+              border-radius: var(--radius-sm);
+              border: 1px solid var(--glass-border);
+              overflow: hidden;
+              background: var(--dark3);
+              text-align: center;
+              padding: 10px;
+            "
+          >
+            <img
+              src="assets/images/drive_image_share_instructions.png"
+              alt="Google Drive Share Instructions"
+              style="
+                max-width: 100%;
+                height: auto;
+                border-radius: 4px;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeDriveInfoModal()">
+            Close
+          </button>
         </div>
       </div>
     </div>

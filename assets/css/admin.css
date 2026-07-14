@@ -942,3 +942,10 @@ input:checked + .slider:before {
     grid-template-columns: 1fr;
   }
 }
+
+/* Google Drive Info Trigger Hover Effect */
+.drive-info-trigger:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: var(--gold-light) !important;
+  border-color: var(--gold) !important;
+}

@@ -19,25 +19,25 @@ window.addEventListener("load", function () {
   document.body.style.overflow = "hidden";
   tl.to(
     "#loader-king",
-    { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
+    { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
     0.3,
   )
     .to(
       "#loader-line",
-      { width: "100%", duration: 0.2, ease: "power2.inOut" },
-      0.4,
+      { width: "100%", duration: 0.6, ease: "power2.inOut" },
+      0.8,
     )
     .to(
       "#loader-mobiles",
-      { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
-      0.4,
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      1.0,
     )
     .to(
       "#loader-tagline",
-      { opacity: 1, duration: 0.2, ease: "power2.out" },
-      0.4,
+      { opacity: 1, duration: 0.5, ease: "power2.out" },
+      1.4,
     )
-    .to({}, { duration: 0.2 }, 0.3);
+    .to({}, { duration: 0.8 }, 1.8);
 });
 
 /* ─────────────────────────────
@@ -188,9 +188,12 @@ function initBrandSection() {
     }
 
     brandCards.forEach(function (card, index) {
-      window.setTimeout(function () {
-        card.classList.add("brand-card-visible");
-      }, 180 + index * 120);
+      window.setTimeout(
+        function () {
+          card.classList.add("brand-card-visible");
+        },
+        180 + index * 120,
+      );
     });
   }
 
@@ -294,21 +297,27 @@ window.animateServiceTransition = function (
   previousActiveServiceId,
   servicesContainer,
   detailContent,
-  updateDetailPanel
+  updateDetailPanel,
 ) {
   // Calculate offset of the previous active item
   let exitYDiff = 0;
   if (previousActiveServiceId) {
-    const prevItemEl = servicesContainer.querySelector(`.service-item[data-service="${previousActiveServiceId}"]`);
+    const prevItemEl = servicesContainer.querySelector(
+      `.service-item[data-service="${previousActiveServiceId}"]`,
+    );
     if (prevItemEl) {
       const rectItem = prevItemEl.getBoundingClientRect();
       const rectDetail = detailContent.getBoundingClientRect();
-      exitYDiff = (rectItem.top + rectItem.height / 2) - (rectDetail.top + rectDetail.height / 2);
+      exitYDiff =
+        rectItem.top +
+        rectItem.height / 2 -
+        (rectDetail.top + rectDetail.height / 2);
     }
   }
 
   // Apply exit animation:
-  detailContent.style.transition = "opacity 0.22s cubic-bezier(0.25, 1, 0.5, 1), transform 0.22s cubic-bezier(0.25, 1, 0.5, 1)";
+  detailContent.style.transition =
+    "opacity 0.22s cubic-bezier(0.25, 1, 0.5, 1), transform 0.22s cubic-bezier(0.25, 1, 0.5, 1)";
   detailContent.style.opacity = "0";
 
   if (targetItem === null) {
@@ -328,7 +337,10 @@ window.animateServiceTransition = function (
     if (targetItem) {
       const rectItem = targetItem.getBoundingClientRect();
       const rectDetail = detailContent.getBoundingClientRect();
-      entryYDiff = (rectItem.top + rectItem.height / 2) - (rectDetail.top + rectDetail.height / 2);
+      entryYDiff =
+        rectItem.top +
+        rectItem.height / 2 -
+        (rectDetail.top + rectDetail.height / 2);
     }
 
     // Disable transition to instantly position at starting point
@@ -341,7 +353,8 @@ window.animateServiceTransition = function (
     detailContent.offsetHeight;
 
     // Enable transition and animate in to center with premium easing
-    detailContent.style.transition = "opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1)";
+    detailContent.style.transition =
+      "opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1)";
     detailContent.style.opacity = "1";
     detailContent.style.transform = "translate(0, 0) scale(1)";
   }, 220);
@@ -397,12 +410,21 @@ function initThree() {
   var renderer, scene, camera, particles, animId;
 
   try {
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      alpha: true,
+      antialias: true,
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(
+      60,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000,
+    );
     camera.position.z = 50;
 
     var count = 300;

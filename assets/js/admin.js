@@ -1278,6 +1278,7 @@ window.openItemModal = function (tabName, index) {
               <label class="form-label" style="margin-bottom: 0;">Image Path / URL</label>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+                <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
                 <label class="switch">
                   <input type="checkbox" id="m-serv-image-is-drive" ${isServImgDrive ? "checked" : ""} onchange="document.getElementById('m-serv-image').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
                     <span class="slider"></span>
@@ -1405,6 +1406,7 @@ window.openItemModal = function (tabName, index) {
               <label class="form-label" style="margin-bottom: 0;">Brand Logo Path (White/Transparent PNG recommended)</label>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+                <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
                 <label class="switch">
                   <input type="checkbox" id="m-part-logo-is-drive" ${isPartLogoDrive ? "checked" : ""} onchange="document.getElementById('m-part-logo').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
                     <span class="slider"></span>
@@ -1418,6 +1420,7 @@ window.openItemModal = function (tabName, index) {
               <label class="form-label" style="margin-bottom: 0;">Slider Image Path (Optional horizontal logo)</label>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+                <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
                 <label class="switch">
                   <input type="checkbox" id="m-part-slider-is-drive" ${isPartSliderDrive ? "checked" : ""} onchange="document.getElementById('m-part-slider').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
                     <span class="slider"></span>
@@ -1471,6 +1474,7 @@ window.openItemModal = function (tabName, index) {
               <label class="form-label" style="margin-bottom: 0;">Image Path / URL</label>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+                <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
                 <label class="switch">
                   <input type="checkbox" id="m-acc-image-is-drive" ${isAccImgDrive ? "checked" : ""} onchange="document.getElementById('m-acc-image').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
                     <span class="slider"></span>
@@ -1507,6 +1511,7 @@ window.openItemModal = function (tabName, index) {
               <label class="form-label" style="margin-bottom: 0;">Image Path / URL (Optional)</label>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 0.75rem; color: var(--gray-light); font-weight: 500;">Drive Image</span>
+                <span class="drive-info-trigger" onclick="openDriveInfoModal(event)" style="cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.08); border-radius: 50%; width: 15px; height: 15px; font-size: 10px; color: var(--gold); font-weight: bold; border: 1px solid rgba(212, 160, 23, 0.3);" title="How to use Google Drive images">i</span>
                 <label class="switch">
                   <input type="checkbox" id="m-gall-image-is-drive" ${isGallImgDrive ? "checked" : ""} onchange="document.getElementById('m-gall-image').placeholder = this.checked ? 'Enter Google Drive URL or File ID' : 'assets/images/... or external URL'">
                     <span class="slider"></span>
@@ -1657,6 +1662,25 @@ function getNewItemTemplate(tabName) {
 window.closeItemModal = function () {
   const modal = document.getElementById("item-modal");
   modal.classList.remove("show");
+};
+
+// Open and Close Drive Instruction Modal
+window.openDriveInfoModal = function (e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const modal = document.getElementById("drive-instruction-modal");
+  if (modal) modal.classList.add("show");
+};
+
+window.closeDriveInfoModal = function (e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const modal = document.getElementById("drive-instruction-modal");
+  if (modal) modal.classList.remove("show");
 };
 
 // Update local array store when Modal Form is submitted
