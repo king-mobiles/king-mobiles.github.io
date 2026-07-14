@@ -1263,7 +1263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbzJiiUoYwPGC6gRGuBKRRBQIsxO-pjKeWLqY4NmxJAxevVUl1zmXb7au3LrnVN8rdya/exec",
+          "https://script.google.com/macros/s/AKfycbyxfSOmP3w7EImVMuTsfUrGgE5GCkiH8fzP7ziA2kWpZg25qrxu2iO8jT1CoAprhAVF/exec",
           {
             method: "POST",
             body: data,
